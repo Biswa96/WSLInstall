@@ -7,6 +7,7 @@
 #include <ntstatus.h>
 #include <stdio.h>
 #include <ctime> //for time(0)//
+#include <sys/stat.h> //for stat()//
 #pragma comment(lib, "ntdll.lib")
 
 const char* lxattrb = "LXATTRB";
@@ -76,5 +77,4 @@ HANDLE GetFileHandle(wchar_t* DosFileName) {
 		FILE_SHARE_READ | FILE_SHARE_WRITE | FILE_SHARE_DELETE, FILE_OPEN_IF, 0, NULL, 0);
 	return FileHandle;
 }
-
 /*END-80*/

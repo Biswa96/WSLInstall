@@ -1,14 +1,31 @@
 #pragma once
 #include "definition.h"
 
+unsigned long setMode(wchar_t* path) {
+
+	unsigned long mode;
+	int permission; printf("Enter file permission: ");
+	scanf("%o", &permission);
+
+	struct _stat s;
+	int res = _wstat(path, &s);
+	if (res == 0) {
+		if (s.st_mode & _S_IFDIR)
+			mode = _S_IFDIR | permission;
+		else if (s.st_mode & _S_IFREG)
+			mode = _S_IFREG | permission;
+
+	/* Symbolic links and Hard links don't work */
+	}
+	return mode;
+}
+
 void setEa(wchar_t* src) {
 
 	EaData eaData[sizeof(EaData)];
 	memset(eaData, 0, sizeof(EaData)); // set all elements to zero //
 	eaData->Version = 1;
-	int mode; printf("Enter file permission: ");
-	scanf("%o", &mode);
-	eaData->mode = 0x8000 | mode; // octate 0x81ff == 100777 //
+	eaData->mode = setMode(src); // octate 0x81ff == 100777 //
 	eaData->atime = eaData->ctime = eaData->mtime = time(0);
 
 	const int EaBufferSize = sizeof(FILE_FULL_EA_INFORMATION) + lxattrbSize + sizeof(EaData);
@@ -26,5 +43,4 @@ void setEa(wchar_t* src) {
 	NTSTATUS res = NtSetEaFile(GetFileHandle(src), &status, EaBuffer, EaBufferSize);
 	(res == STATUS_SUCCESS) ? printf("Successfully added attributes\n") : printf("NtSetEaFile Error: 0x%x\n", res);
 }
-
-/* END-30*/
+/* END-46*/
