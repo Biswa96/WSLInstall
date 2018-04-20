@@ -5,10 +5,11 @@ void getEa(wchar_t* src) {
 
 	NTSTATUS res;
 	IO_STATUS_BLOCK IoStatusBlock;
-	const int EaBufferSize = sizeof(FILE_FULL_EA_INFORMATION) + lxattrbSize + sizeof(EaData);
-	FILE_FULL_EA_INFORMATION EaBuffer[EaBufferSize];
+	HANDLE FileHandle = GetFileHandle(src, FALSE);
+	char Buffer[EaBufferSize];
+	FILE_FULL_EA_INFORMATION* EaBuffer = (FILE_FULL_EA_INFORMATION*)Buffer;
 
-	res = NtQueryEaFile(GetFileHandle(src), &IoStatusBlock, EaBuffer, EaBufferSize, TRUE, NULL, 0, NULL, FALSE);
+	res = NtQueryEaFile(FileHandle, &IoStatusBlock, EaBuffer, EaBufferSize, TRUE, NULL, 0, NULL, FALSE);
 	if (res == STATUS_SUCCESS) {
 		printf(" EaName: %s\n EaNameLength: %u\n EaValueLength: %u\n",
 			EaBuffer->EaName,
@@ -19,4 +20,3 @@ void getEa(wchar_t* src) {
 		printf("NtQueryEaFile Error: 0x%x\n", res);
 	}
 }
-/*END-22*/

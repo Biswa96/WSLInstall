@@ -17,28 +17,21 @@ int wmain(int argc, wchar_t* argv[]) {
 		Usage(argv[0]);
 		exit(EXIT_FAILURE);
 	}
-
 	if (wcscmp(argv[1], L"-c") == 0) {
 		copyEa(argv[2], argv[3]);
 		return 0;
 	}
-
 	if (wcscmp(argv[1], L"-g") == 0) {
 		getEa(argv[2]);
 		return 0;
 	}
-
 	if (wcscmp(argv[1], L"-s") == 0) {
 		setEa(argv[2]);
 		return 0;
 	}
-
 	else {
 		printf("\n Unknown argument.\n");
 		Usage(argv[0]);
 		exit(EXIT_FAILURE);
 	}
-
 }
-
-/*END-44*/

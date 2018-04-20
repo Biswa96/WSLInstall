@@ -3,7 +3,7 @@
 
 unsigned long setMode(wchar_t* path) {
 
-	unsigned long mode;
+	unsigned long mode = 0;
 	int permission; printf("Enter file permission: ");
 	scanf("%o", &permission);
 
@@ -28,8 +28,8 @@ void setEa(wchar_t* src) {
 	eaData->mode = setMode(src); // octate 0x81ff == 100777 //
 	eaData->atime = eaData->ctime = eaData->mtime = time(0);
 
-	const int EaBufferSize = sizeof(FILE_FULL_EA_INFORMATION) + lxattrbSize + sizeof(EaData);
-	FILE_FULL_EA_INFORMATION EaBuffer[EaBufferSize];
+	char Buffer[EaBufferSize];
+	FILE_FULL_EA_INFORMATION* EaBuffer = (FILE_FULL_EA_INFORMATION*)Buffer;
 	EaBuffer->NextEntryOffset = 0;
 	EaBuffer->Flags = 0;
 	EaBuffer->EaNameLength = lxattrbSize;
@@ -40,7 +40,7 @@ void setEa(wchar_t* src) {
 	memcpy(EaBuffer->EaName + (EaBuffer->EaNameLength + 1), &eaData, sizeof(EaData));
 
 	IO_STATUS_BLOCK status;
-	NTSTATUS res = NtSetEaFile(GetFileHandle(src), &status, EaBuffer, EaBufferSize);
+	HANDLE FileHandle = GetFileHandle(src, TRUE);
+	NTSTATUS res = NtSetEaFile(FileHandle, &status, EaBuffer, EaBufferSize);
 	(res == STATUS_SUCCESS) ? printf("Successfully added attributes\n") : printf("NtSetEaFile Error: 0x%x\n", res);
 }
-/* END-46*/
