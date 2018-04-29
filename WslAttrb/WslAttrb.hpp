@@ -1,4 +1,3 @@
-#pragma once
 #define _CRT_SECURE_NO_WARNINGS
 #define WIN32_NO_STATUS
 #include <Windows.h>
@@ -6,8 +5,6 @@
 #include <winternl.h>
 #include <ntstatus.h>
 #include <stdio.h>
-#include <ctime> //for time(0)//
-#include <sys/stat.h> //for stat()//
 #pragma comment(lib, "ntdll.lib")
 
 struct EaData {
@@ -33,7 +30,7 @@ struct FILE_FULL_EA_INFORMATION {
 	CHAR   EaName[1];
 };
 
-const char* lxattrb = "LXATTRB";
+static const char lxattrb[] = "LXATTRB";
 const int lxattrbSize = 7; //size of LXATTRB attribute without null byte//
 const int EaBufferSize = sizeof(FILE_FULL_EA_INFORMATION) + lxattrbSize + sizeof(EaData);
 
@@ -63,27 +60,4 @@ extern "C" NTSTATUS WINAPI NtSetEaFile(
 	_In_  ULONG            Length
 );
 
-HANDLE GetFileHandle(wchar_t* DosFileName, bool write ) {
-
-	UNICODE_STRING FileName;
-	IO_STATUS_BLOCK IoStatusBlock;
-	OBJECT_ATTRIBUTES ObjectAttributes;
-	ACCESS_MASK DesiredAccess = GENERIC_READ;
-	HANDLE FileHandle;
-	NTSTATUS res;
-	RtlDosPathNameToNtPathName_U(DosFileName, &FileName, NULL, NULL);
-	InitializeObjectAttributes(&ObjectAttributes, &FileName, 0, NULL, NULL);
-
-	// GENERIC_WRITE contains FILE_WRITE_EA File Access Rights //
-	if (write) {
-		DesiredAccess |= GENERIC_WRITE;
-	}
-
-	res = NtCreateFile(&FileHandle, DesiredAccess, &ObjectAttributes, &IoStatusBlock, NULL, 0,
-		FILE_SHARE_READ | FILE_SHARE_WRITE | FILE_SHARE_DELETE, FILE_OPEN_IF, 0, NULL, 0);
-	if (res != STATUS_SUCCESS) {
-		printf("NtCreateFile Error: 0x%x\n", res);
-		exit(EXIT_FAILURE);
-	}
-	return FileHandle;
-}
+HANDLE GetFileHandle(wchar_t* DosFileName, bool write);

@@ -1,6 +1,4 @@
-#include "copyEa.h"
-#include "getEa.h"
-#include "setEa.h"
+#include "WslAttrb.hpp"
 
 void Usage(wchar_t* appName) {
 	printf(
@@ -10,6 +8,10 @@ void Usage(wchar_t* appName) {
 		" -g: get attributes <source>\n"
 		" -s: set attributes <source>\n", appName);
 }
+
+void copyEa(wchar_t* src, wchar_t* dst);
+void getEa(wchar_t* src);
+void setEa(wchar_t* src);
 
 int wmain(int argc, wchar_t* argv[]) {
 

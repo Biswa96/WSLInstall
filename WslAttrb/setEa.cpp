@@ -1,5 +1,6 @@
-#pragma once
-#include "definition.h"
+#include "WslAttrb.hpp"
+#include <ctime> //for time(0)//
+#include <sys/stat.h> //for stat()//
 
 unsigned long setMode(wchar_t* path) {
 

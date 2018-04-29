@@ -1,5 +1,4 @@
-#pragma once
-#include "definition.h"
+#include "WslAttrb.hpp"
 
 void copyEa(wchar_t* src, wchar_t* dst) {
 

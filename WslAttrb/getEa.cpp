@@ -1,5 +1,4 @@
-#pragma once
-#include "definition.h"
+#include "WslAttrb.hpp"
 
 void getEa(wchar_t* src) {
 
