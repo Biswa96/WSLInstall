@@ -12,7 +12,7 @@ void copyEa(wchar_t* src, wchar_t* dst) {
 	resA = NtQueryEaFile(srcFileHandle, &IoStatusBlock, EaBuffer, EaBufferSize, TRUE, NULL, 0, NULL, FALSE);
 	if (resA == STATUS_SUCCESS) {
 		resB = NtSetEaFile(dstFileHandle, &IoStatusBlock, EaBuffer, EaBufferSize);
-		(resB == STATUS_SUCCESS) ? printf("Successfully copied\n") : printf("NtSetEaFile Error: 0x%x\n", resB);
+		(resB == STATUS_SUCCESS) ? printf("Success\n") : printf("NtSetEaFile Error: 0x%x\n", resB);
 	}
 	else 
 		printf("NtQueryEaFile Error: 0x%x\n", resA);
