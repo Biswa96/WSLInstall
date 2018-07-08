@@ -1,9 +1,12 @@
-CC = g++
-SRCS = $(wildcard *.cpp)
-PROGS = $(patsubst %.cpp,%,$(SRCS))
+#Compile every single C file
+
+CC = gcc
+CFLAGS=-Wall -Werror -Wextra
+SRCS = $(wildcard *.c)
+PROGS = $(patsubst %.c,%,$(SRCS))
 
 all: $(PROGS)
 
-%: %.cpp
+%: %.c
 
-	$(CC) $(CFLAGS)  -o $@ $<
+	$(CC) $(CFLAGS) -o $@ $<

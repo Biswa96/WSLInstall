@@ -36,7 +36,7 @@ Options:
 
 * WslAttrb: This adds `LXATTRB` extended attribute to fix the WSL files to be visible in Linux world. Also this configures three other DRVFS extended attributes viz. `$LXUID`, `$LXGID` and `$LXMOD` simultaneously. 
 
-This is only for testing purposes. See [list of distributions](Distro_Links.md) that can be added in WSL and how to [make RootFS tar.gz](Make-RootFS-tar.gz.md) for further details. More features will come in future :wink: 
+This is only for testing purposes. See [list of distributions](Distro_Links.md) that can be added in WSL and how to [make RootFS tar.gz](Make_RootFS.md) for further details. More features will come in future :wink: 
 
 ## Other repositories
 1. [LxRunoffline](https://github.com/DDoSolitary/LxRunOffline.git)
