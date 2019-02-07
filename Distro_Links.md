@@ -51,35 +51,40 @@
 <!-- http://download.fedoraproject.org/pub/Linux/Fedora/releases/XX/Docker/x86_64/images/Fedora-Docker-Base-XX-X.X.x86_64.tar.xz -->
 <!-- Fedora-Docker-Base-XX-X.X.x86_64.tar.xz/Fedora-Docker-Base-XX-X.X.x86_64.tar.xz/<hash>/layer.tar -->
 
-10. Mageia 
+10. Gentoo 
+	- https://gentoo.org/downloads
+	- http://distfiles.gentoo.org/releases/amd64/autobuilds/
+	- https://gentoo.osuosl.org/releases/amd64/autobuilds/
+<!-- https://gentoo.osuosl.org/releases/amd64/autobuilds/X/stage3-amd64-X.tar.xz -->
+
+11. Mageia 
 	- https://github.com/docker-library/official-images/blob/master/library/mageia/
 	- https://github.com/juanluisbaptiste/docker-brew-mageia.git
 
-11. Manjaro 
+12. Manjaro 
 	- https://manjaro.org/get-manjaro/
 	- https://sourceforge.net/projects/manjarolinux/files/release/
 
-12. OpenSUSE 
+13. OpenSUSE 
 	- https://aka.ms/wsl-opensuse-42
 	- https://github.com/docker-library/official-images/blob/master/library/opensuse/
 	- https://github.com/openSUSE/docker-containers-build.git
 	- http://download.opensuse.org/repositories/Cloud:/Images:/
 
-13. Oracle Linux 
+14. Oracle Linux 
 	- https://github.com/docker-library/official-images/blob/master/library/oraclelinux/
 	- https://github.com/oracle/ol-container-images.git
 
-14. Trisquel 
+15. Trisquel 
 	- http://jenkins.trisquel.info/makeiso/iso/
 	- http://mirror.fsf.org/trisquel-images/
 <!-- http://mirror.fsf.org/trisquel-images/trisquel-mini_X.X_amd64.iso -->
 <!-- trisquel-mini_X.X_amd64.iso/casper/filesystem.squashfs -->
 
-15. Ubuntu 
+16. Ubuntu 
 	- https://aka.ms/wsl-ubuntu-1604
 	- https://cloud-images.ubuntu.com/releases/
 	- https://partner-images.canonical.com/core/
 	- https://github.com/docker-library/official-images/blob/master/library/ubuntu/
 <!-- https://cloud-images.ubuntu.com/X/current/X-server-cloudimg-amd64.squashfs -->
 	
-<!--END-85-->
