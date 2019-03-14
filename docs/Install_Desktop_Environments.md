@@ -18,7 +18,7 @@ The full download and installation procedure takes 3±1 hours depending on your 
 
 * Install Kubuntu DE (~1 GB) ([Source](https://itsfoss.com/install-kde-on-ubuntu/)): `sudo apt-get install kubuntu-desktop` 
 
-* Optional packages: `sudo apt-get install kde-plasma-desktop kscreen konq-plugins` 
+* Optional packages: `sudo apt-get install kstart kde-plasma-desktop kscreen konq-plugins` 
 
 * Install all Qt5 libraries: `sudo apt-get install libqt5*` 
 
