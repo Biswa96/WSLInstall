@@ -1,10 +1,14 @@
 # WSLInstall
 
-Install any GNU/Linux distribution userspace in Windows Subsystem for Linux (WSL) with compressed RootFS tarballs :package: (tar.gz) or with Docker containers :whale: or with ISO files :cd: 
+Install any GNU/Linux distribution userspace in Windows Subsystem for Linux (WSL)
+with compressed RootFS tarballs :package: (tar.gz) or
+with Docker containers :whale: or with ISO files :cd: 
 
 ## Build
 
-Clone this GitHub repository with this link https://github.com/Biswa96/WSLInstall.git . Use MSBuild (or mingw-w64) to make executable file from project file(.vcxproj). Or use the makefile in `WslFunctions` folder. The project file only provides x64-Release version. 
+Clone this GitHub repository with this link https://github.com/Biswa96/WSLInstall.git .
+Use MSBuild (or mingw-w64) to make executable file from project file(.vcxproj).
+Or use the makefile in `WslFunctions` folder. The project file only provides x64-Release version. 
 
 ### Build wslapi export libraries:
 
@@ -22,21 +26,30 @@ for further details:
 
 ### WslInstall: Installs GNU/Linux distributions 
 
-1. First make a folder where you want to install that distribution, that may be any partition of internal drives only. External drives are not supported now. 
+1. First make a folder where you want to install that distribution,
+that may be any partition of internal drives only. External drives are not supported now. 
 2. Place both `WslInstall.exe` and `{distribution}.tar.gz` files in that same folder. 
-3. Open command prompt in that folder and type the command like this: `WslInstall.exe <distro_name> <distribution.tar.gz>`. Always put a space between the two command arguments like between <distro_name> and <distribution.tar.gz>. 
-4. After some seconds, that distribution will be installed. Confirm it with `wslconfig.exe /list /all` command. Also you may see a `rootfs` folder in that directory where you want to install.
+3. Open command prompt in that folder and type the command like this:
+`WslInstall.exe <distro_name> <distribution.tar.gz>`. Always put a space
+between the two command arguments like between <distro_name> and <distribution.tar.gz>. 
+4. After some seconds, that distribution will be installed. Confirm it with
+`wslconfig.exe /list /all` command. Also you may see a `rootfs` folder in that
+directory where you want to install.
 
 ## How does it work
 
-* WslInstall: In the source code, the main function imports the [`WslRegisterDistribution`] function from `wslapi.dll` file. Then it passes the provided two commandline arguments in `distroName` and in `tarGzFilename` string parameters of that function respectively and the imported function installs that distribution. See details of [WSL Functions] and [WSL_DISTRIBUTION_FLAGS]. 
-
-This is only for testing purposes. See [list of distributions](Distro_Links.md) that can be added in WSL and how to [make RootFS tar.gz](Make_RootFS.md) for further details. More features will come in future :wink: 
+* WslInstall: In the source code, the main function imports the
+[`WslRegisterDistribution`] function from `wslapi.dll` file. Then it passes
+the provided two commandline arguments in `distroName` and in `tarGzFilename`
+string parameters of that function respectively and the imported function
+installs that distribution. See details of [WSL Functions] and [WSL_DISTRIBUTION_FLAGS]. 
 
 ## Table Of Contents:
 
 * [Install any distribution in WSL](docs/Install_Distributions.md)
 * [Install any desktop environment in WSL](docs/Install_Desktop_Environments.md)
+* [List of distributions](docs/Distro_Links.md)
+* [Make rootfs tarball](docs/Make_RootFS.md)
 
 ## Other repositories
 1. [LxRunoffline](https://github.com/DDoSolitary/LxRunOffline.git)
@@ -52,6 +65,6 @@ This project is licensed under GNU General Public License v3 or higher. See [LIC
 
 <!--Links-->
 
-[`WslRegisterDistribution`]: https://msdn.microsoft.com/en-us/library/windows/desktop/mt826870(v=vs.85).aspx
-[WSL Functions]: https://msdn.microsoft.com/en-us/library/windows/desktop/mt826874(v=vs.85).aspx
-[WSL_DISTRIBUTION_FLAGS]: https://msdn.microsoft.com/en-us/library/windows/desktop/mt826872(v=vs.85).aspx
+[`WslRegisterDistribution`]: https://docs.microsoft.com/en-us/windows/desktop/api/wslapi/nf-wslapi-wslregisterdistribution
+[WSL Functions]: https://docs.microsoft.com/en-us/windows/desktop/api/wslapi/
+[WSL_DISTRIBUTION_FLAGS]: https://docs.microsoft.com/en-us/windows/desktop/api/wslapi/ne-wslapi-wsl_distribution_flags
