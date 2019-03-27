@@ -1,23 +1,14 @@
-#include <Windows.h>
 #include <stdio.h>
+#include <Windows.h>
+#include <wslapi.h>
 
-typedef HRESULT (WINAPI* RegisterDistro)(
-    PCWSTR distroName,
-    PCWSTR tarGzFilename
-    );
-
-int main() {
+int main(void)
+{
     int wargc;
-    wchar_t** wargv;
-    wargv = CommandLineToArgvW(GetCommandLineW(), &wargc);
-    HMODULE dll = LoadLibraryExW(L"wslapi.dll", NULL, LOAD_LIBRARY_SEARCH_SYSTEM32);
-    RegisterDistro func = (void*)GetProcAddress(dll, "WslRegisterDistribution");
-    HRESULT result = func(wargv[1], wargv[2]);
-    
-    if (result == S_OK) {
-        printf("Distribution '%ls' is successfully installed\n", wargv[1]);
-    }
-    
-    else
-    printf("Error: 0x%lx\n", result);
+    wchar_t** wargv = CommandLineToArgvW(GetCommandLineW(), &wargc);
+
+    HRESULT result = WslRegisterDistribution(wargv[1], wargv[2]);
+
+    if (result != S_OK)
+        printf("Error: 0x%08lX\n", result);
 }

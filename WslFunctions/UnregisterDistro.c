@@ -1,23 +1,14 @@
-#include <Windows.h>
 #include <stdio.h>
+#include <Windows.h>
+#include <wslapi.h>
 
-typedef HRESULT (WINAPI* UnregisterDistro)(
-     PCWSTR distroName
-    );
-
-int main() {
+int main(void)
+{
     int wargc;
-    wchar_t** wargv;
-    wargv = CommandLineToArgvW(GetCommandLineW(), &wargc);
-    HMODULE dll = LoadLibraryExW(L"wslapi.dll", NULL, LOAD_LIBRARY_SEARCH_SYSTEM32);
-    UnregisterDistro func = (void*)GetProcAddress(dll, "WslUnregisterDistribution");
-    HRESULT result = func(wargv[1]);
-    
-    if (result == S_OK) {
-        printf("Distribution '%ls' is successfully removed\n", wargv[1]);
-    }
-    
-    else
-    printf("Error: 0x%lx\n", result);
-    
+    wchar_t** wargv = CommandLineToArgvW(GetCommandLineW(), &wargc);
+
+    HRESULT result = WslUnregisterDistribution(wargv[1]);
+
+    if (result != S_OK)
+        printf("Error: 0x%08lX\n", result);
 }
