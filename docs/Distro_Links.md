@@ -48,8 +48,8 @@
 	- https://download.fedoraproject.org/pub/fedora/linux/releases/
 	- https://github.com/docker-library/official-images/blob/master/library/fedora/
 	- https://github.com/fedora-cloud/docker-brew-fedora.git
-<!-- http://download.fedoraproject.org/pub/Linux/Fedora/releases/XX/Docker/x86_64/images/Fedora-Docker-Base-XX-X.X.x86_64.tar.xz -->
-<!-- Fedora-Docker-Base-XX-X.X.x86_64.tar.xz/Fedora-Docker-Base-XX-X.X.x86_64.tar.xz/<hash>/layer.tar -->
+<!-- http://download.fedoraproject.org/pub/Linux/Fedora/releases/XX/Container/x86_64/images/Fedora-Container-Base-XX-X.X.x86_64.tar.xz -->
+<!-- Fedora-Container-Base-XX-X.X.x86_64.tar.xz/<hash>/layer.tar -->
 
 10. Gentoo 
 	- https://gentoo.org/downloads
