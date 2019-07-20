@@ -44,12 +44,18 @@ the provided two commandline arguments in `distroName` and in `tarGzFilename`
 string parameters of that function respectively and the imported function
 installs that distribution. See details of [WSL Functions] and [WSL_DISTRIBUTION_FLAGS]. 
 
+
 ## Table Of Contents:
 
-* [Install any distribution in WSL](docs/Install_Distributions.md)
-* [Install any desktop environment in WSL](docs/Install_Desktop_Environments.md)
-* [List of distributions](docs/Distro_Links.md)
-* [Make rootfs tarball](docs/Make_RootFS.md)
+* Docs:
+  - [Install any distribution in WSL](docs/Install_Distributions.md)
+  - [Install any desktop environment in WSL](docs/Install_Desktop_Environments.md)
+  - [List of distributions](docs/Distro_Links.md)
+  - [Make rootfs tarball](docs/Make_RootFS.md)
+
+* Tools:
+  - DistroLink: Create a shortcut file aka. shell link with `\\wsl$` path.
+
 
 ## Other repositories
 1. [LxRunoffline](https://github.com/DDoSolitary/LxRunOffline.git)
