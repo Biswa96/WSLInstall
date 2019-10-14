@@ -33,58 +33,67 @@
 	- https://github.com/CentOS/sig-cloud-instance-images.git
 <!-- http://isodirect.centos.org/centos/X/isos/x86_64/CentOS-X-x86_64-Minimal-XXXX.iso -->
 
-7. Crux 
+7. Clear Linux
+	- https://github.com/clearlinux/docker-brew-clearlinux
+
+8. Crux 
 	- https://crux.ninja/updated-iso/
 	- https://github.com/docker-library/official-images/blob/master/library/crux/
 	- https://github.com/prologic/docker-crux.git
 <!-- https://crux.ninja/updated-iso/crux-X.X-updated.iso -->
 <!-- crux-X.X-updated.iso/rootfs.tar.xz -->
 
-8. Debian 
+9. Debian 
 	- https://github.com/docker-library/official-images/blob/master/library/debian/
 	- https://github.com/debuerreotype/docker-debian-artifacts/blob/dist-amd64/stable/
 
-9. Fedora 
+10. Fedora 
 	- https://download.fedoraproject.org/pub/fedora/linux/releases/
 	- https://github.com/docker-library/official-images/blob/master/library/fedora/
 	- https://github.com/fedora-cloud/docker-brew-fedora.git
 <!-- http://download.fedoraproject.org/pub/Linux/Fedora/releases/XX/Container/x86_64/images/Fedora-Container-Base-XX-X.X.x86_64.tar.xz -->
 <!-- Fedora-Container-Base-XX-X.X.x86_64.tar.xz/<hash>/layer.tar -->
 
-10. Gentoo 
+11. Gentoo 
 	- https://gentoo.org/downloads
 	- http://distfiles.gentoo.org/releases/amd64/autobuilds/
 	- https://gentoo.osuosl.org/releases/amd64/autobuilds/
 <!-- https://gentoo.osuosl.org/releases/amd64/autobuilds/X/stage3-amd64-X.tar.xz -->
 
-11. Mageia 
+12. Mageia 
 	- https://github.com/docker-library/official-images/blob/master/library/mageia/
 	- https://github.com/juanluisbaptiste/docker-brew-mageia.git
 
-12. Manjaro 
+13. Manjaro 
 	- https://manjaro.org/get-manjaro/
 	- https://sourceforge.net/projects/manjarolinux/files/release/
 
-13. OpenSUSE 
+14. OpenSUSE 
 	- https://aka.ms/wsl-opensuse-42
 	- https://github.com/docker-library/official-images/blob/master/library/opensuse/
 	- https://github.com/openSUSE/docker-containers-build.git
 	- http://download.opensuse.org/repositories/Cloud:/Images:/
 
-14. Oracle Linux 
+15. Oracle Linux 
 	- https://github.com/docker-library/official-images/blob/master/library/oraclelinux/
 	- https://github.com/oracle/ol-container-images.git
 
-15. Trisquel 
+16. Scientific Linux
+	- https://github.com/scientificlinux/sl-docker
+
+17. Trisquel 
 	- http://jenkins.trisquel.info/makeiso/iso/
 	- http://mirror.fsf.org/trisquel-images/
 <!-- http://mirror.fsf.org/trisquel-images/trisquel-mini_X.X_amd64.iso -->
 <!-- trisquel-mini_X.X_amd64.iso/casper/filesystem.squashfs -->
 
-16. Ubuntu 
+18. Ubuntu 
 	- https://aka.ms/wsl-ubuntu-1604
 	- https://cloud-images.ubuntu.com/releases/
 	- https://partner-images.canonical.com/core/
 	- https://github.com/docker-library/official-images/blob/master/library/ubuntu/
 <!-- https://cloud-images.ubuntu.com/X/current/X-server-cloudimg-amd64.squashfs -->
-	
+
+19. Void Linux
+	- http://alpha.de.repo.voidlinux.org/live/current/
+	- https://a-hel-fi.m.voidlinux.org/live/current/
