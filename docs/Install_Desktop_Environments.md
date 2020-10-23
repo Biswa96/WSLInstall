@@ -75,7 +75,7 @@ shows high CPU/RAM usage then redirect the command output with `startkde > /dev/
 
 ```bash
 apt --fix-broken install
-apt --mix-fissing upgrade
+apt --fix-missing upgrade
 dpkg --configure -a
 ```
 
